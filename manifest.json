@@ -1,6 +1,6 @@
 {
   "name": "ato-ichinen",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "manifest_version": 2,
   "description": "Activeにしている間、Google検索結果を1年以内のものに限定します。",
   "background": { "page": "background/background.html" },
