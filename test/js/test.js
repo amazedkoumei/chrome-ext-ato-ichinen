@@ -22,7 +22,7 @@ test("isGoogle", function() {
   equal(urlManager.isGoogle(url), true, url);
   url = "https://www.google.co.jp/webhp?sourceid=chrome-instant&ie=UTF-8#hl=ja&safe=off&output=search&sclient=psy-ab&q=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF&qscrl=1&oq=&gs_l=&pbx=1&fp=47ee0b0c44807526&bav=on.2,or.r_gc.r_pw.r_cp.r_qf.,cf.osb&biw=1417&bih=758"
   equal(urlManager.isGoogle(url), true, url);
-    
+
   url = "https://www.google.com/analytics/web/#home/a2427596w16501515p17503788/";
   equal(urlManager.isGoogle(url), false, url);
   url = "https://amazedkoumei.com";
@@ -37,4 +37,14 @@ test("getAsQdrParam", function() {
   equal(urlManager.getParam(url, "as_qdr"), "y1", "中ほどのGETパラメータ");
   url = "https://www.google.co.jp/search?aq=f&sourceid=chrome&ie=UTF-8&q=hoge&as_qdr=y1";
   equal(urlManager.getParam(url, "as_qdr"), "y1", "最後のGETパラメータ");
+});
+test("getTbsParam", function() {
+  var url;
+
+  url = "https://www.google.co.jp/search?tbs=qdr:y&aq=f&sourceid=chrome&ie=UTF-8&q=hoge";
+  equal(urlManager.getParam(url, "tbs"), "qdr:y", "最初のGETパラメータ");
+  url = "https://www.google.co.jp/search?aq=f&sourceid=chrome&q=hoge&tbs=qdr:y&ie=UTF-8";
+  equal(urlManager.getParam(url, "tbs"), "qdr:y", "中ほどのGETパラメータ");
+  url = "https://www.google.co.jp/search?aq=f&sourceid=chrome&ie=UTF-8&q=hoge&tbs=qdr:y";
+  equal(urlManager.getParam(url, "tbs"), "qdr:y", "最後のGETパラメータ");
 });
