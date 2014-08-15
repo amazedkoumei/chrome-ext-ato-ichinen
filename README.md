@@ -1,6 +1,8 @@
 chrome-ext-ato-ichinen
 ======================
 
+![TravisCI Status Images](https://travis-ci.org/amazedkoumei/chrome-ext-ato-ichinen.svg?branch=master)
+
 概要 / Overview
 ----------
 Activeにしている間、Google検索結果を1年以内のものに限定するChrome Extensionです。
