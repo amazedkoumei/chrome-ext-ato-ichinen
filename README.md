@@ -22,15 +22,23 @@ chrome://settings/extensions
 
 Pull Request / Pull Request
 ----------
-まずはIssueを確認し、適切なIssueが見当たらない場合は登録してください。
 
-devlopブランチからIssue#[Issue番号]という名前でブランチを切り、Pull Requestしてください。
-
-ブランチ名の例) issue#1
+### ブラウザを利用してのテスト
 
 テストにはqunit( http://docs.jquery.com/QUnit )を使用しています。ダウンロードしたパッケージをWebサーバのDocumentRootに配置し、chrome-ext-my-hatebu-search-in-google/test/ にアクセスすることでテストを実施できます。
 
+### Grunt を利用してのテスト
+
+    $ cd chrome-ext-ato-ichinen
+    $ npm install -g grunt-cli (既に install 済みの場合は不要)
+    $ npm install
+    $ grunt test
+
+
 テストの追加・修正 が必要な場合は、test/test.jsを修正のうえ、Pull Requestに含めてください。
+
+
+
 
 ライセンス / License
 ----------
