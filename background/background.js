@@ -8,7 +8,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
   if(urlManager.isGoogle(tab.url)) {
     if(statusManager.getStatus()) {
-      chrome.tabs.update(tab.id, {url:tab.url + "&as_qdr=y1"});
+      chrome.tabs.update(tab.id, {url:tab.url + "&tbs=qdr:y"});
     } else {
       var url = tab.url;
       url = url.replace(/&as_qdr=y1/g, "");
@@ -19,9 +19,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if(statusManager.getStatus()) {
-    if(urlManager.isGoogle(tab.url) && !urlManager.getParam(tab.url, "as_qdr") && !urlManager.getParam(tab.url, "url")) {
-      chrome.tabs.update(tabId, {url:tab.url + "&as_qdr=y1"});
+    if(urlManager.isGoogle(tab.url) && !urlManager.getParam(tab.url, "tbs") && !urlManager.getParam(tab.url, "url")) {
+      chrome.tabs.update(tabId, {url:tab.url + "&tbs=qdr:y"});
     }
   }
 });
-
