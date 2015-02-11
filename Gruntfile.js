@@ -82,13 +82,28 @@ module.exports = function (grunt) {
 
     qunit: {
       files: ['test/index.html']
+    },
+
+    jshint: {
+      files: [
+        'app/background/background.js',
+        'app/lib/statusManager.js',
+        'app/lib/urlManager.js'
+      ],
+      // http://qiita.com/HieroglypH/items/3cb16ecff43b8e5f62e1
+      // http://jshint.com/docs/options/
+      options: {
+        force: true,
+        unused: true
+      }
     }
 
   });
 
   grunt.registerTask('test', [
     'connect:test',
-    'qunit'
+    'qunit',
+    'jshint'
   ]);
 
   grunt.registerTask('build', [
