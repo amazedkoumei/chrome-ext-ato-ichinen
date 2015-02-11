@@ -13,7 +13,7 @@ var urlManager = $({});
 
 $.extend(urlManager, {
   isGoogle: function(url) {
-    return url.match(/https?:\/\/www\.google[^\/]+?(\/#|\/search|\/webhp|$)/) != null;
+    return url.match(/https?:\/\/www\.google[^\/]+?(\/#|\/search|\/webhp|$)/) !== null;
   },
   // TODO: remove this function
   getGoogleQuery: function(url) {
