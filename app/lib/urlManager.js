@@ -15,6 +15,7 @@ $.extend(urlManager, {
   isGoogle: function(url) {
     return url.match(/https?:\/\/www\.google[^\/]+?(\/#|\/search|\/webhp|$)/) != null;
   },
+  // TODO: remove this function
   getGoogleQuery: function(url) {
     var quPattern = new RegExp(/http.*\?.*&qu=(.+?)(&.*|#.*|$)/);
     var qPattern = new RegExp(/http.*\?.*&q=(.+?)(&.*|#.*|$)/);
