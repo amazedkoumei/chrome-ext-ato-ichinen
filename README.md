@@ -31,7 +31,7 @@ Pull Request / Pull Request
 
 ### ブラウザを利用してのテスト
 
-ダウンロードしたパッケージをWebサーバのDocumentRootに配置し、chrome-ext-my-hatebu-search-in-google/test/ にアクセスすることでテストを実施できます。
+ダウンロードしたパッケージをWebサーバのDocumentRootに配置し、chrome-ext-ato-ichinen/test/ にアクセスすることでテストを実施できます。
 
 ### Grunt を利用してのテスト
 
