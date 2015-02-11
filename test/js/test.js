@@ -42,16 +42,6 @@ test("isGoogle function", function() {
     equal(urlManager.isGoogle(url), false, url);
   }
 });
-test("getAsQdrParam", function() {
-  var url;
-
-  url = "https://www.google.co.jp/search?as_qdr=y1&aq=f&sourceid=chrome&ie=UTF-8&q=hoge";
-  equal(urlManager.getParam(url, "as_qdr"), "y1", "最初のGETパラメータ");
-  url = "https://www.google.co.jp/search?aq=f&sourceid=chrome&q=hoge&as_qdr=y1&ie=UTF-8";
-  equal(urlManager.getParam(url, "as_qdr"), "y1", "中ほどのGETパラメータ");
-  url = "https://www.google.co.jp/search?aq=f&sourceid=chrome&ie=UTF-8&q=hoge&as_qdr=y1";
-  equal(urlManager.getParam(url, "as_qdr"), "y1", "最後のGETパラメータ");
-});
 test("getTbsParam", function() {
   var url;
 
